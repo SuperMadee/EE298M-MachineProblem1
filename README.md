@@ -11,21 +11,21 @@ Using our knowledge on linear mapping and least squares estimation, develop a pr
 
 A planar transformation is a linear transformation on homogeneous 3-D vectors represented by a non-singular 3x3 matrix:
 
-<Insert Equation 1>
+![alt text](Images-Used-MP1-ReadME/Equation1.png)
 
 The **x_i'** constitutes to the **output (new image with no projective distortion)** while **x_i** represents the **input (original image which is distorted)**. The **homography, H, matrix** is a homogeneous matrix which has 8 DOF. We need to compute homography to facilitate the transformation of x' = Hx to directly map the coordinates as shown:
 
-<Insert Mapping Coordinates>
+![alt text](Images-Used-MP1-ReadME/Mapping-Coordinates.png)
 
 To obtain the homography H, we apply the **Direct Linear Transformation (DLT) in its normalized form** to all points in the image. Take note that in order to get H, we need to **equate the cross product of x_i' and Hx_i to zero.**
 
-Take note that **x_i = (x_i,y_i,w_i).T, x_i' = (x_i',y_i',w_i').T** The dot T (.T) means that it's transpose
+Take note that **x_i = (x_i,y_i,w_i).T and x_i' = (x_i',y_i',w_i').T** The dot T (.T) means that it's transpose
 
 ***
 
 Simplifying the equation will give us:
 
-<Insert Equation 2>
+![alt text](Images-Used-MP1-ReadME/Equation2.png)
 
 Note that every A_i corresponds to the mapping of x_i and x_i'. Since there will be 4 points to be selected (x1, x2, x3, x4) and there will be 4 corners or bounds on the new image (x1', x2', x3', x4') then we need 4 A_i (A1, A2, A3, A4) stacked in one matrix to map the points and corners (one-to-one correspondence).
 
@@ -36,26 +36,26 @@ After computing for the homography, H, we need to normalize the points and apply
 
 The scaling matrix is denoted as:
 
-<Insert Equation 3>
+![alt text](Images-Used-MP1-ReadME/Equation3.png)
 
 The computed H will also be used to remap the bounds of the original image to the new bounds of the transformed image. To correctly map the bounds, we need to sample the image and multiply it to every value of the H matrix.
 
 The mapping of bounds is shown below:
 
-<Insert Remapping>
+![alt text](Images-Used-MP1-ReadME/Remapping.png)
 
 ## How to run my program?
 
 ### What you need to know:
 
-1. You may clone the **entire folder** (Machine_Problem-1) which includes the **python file** (projective_distortion_MSP.py) and the **dataset folder** where the sample images are located. Don't forget to view the **MP1-ReadMe.md** before navigating the files
+1. You may clone the **entire repository** which includes the **python file** (projective_distortion_MSP.py), the **dataset folder** where the sample images are located and the folder where all the images I used in the README.md section are found. Don't forget to view the **README.md** before navigating the files
 ***
 2. I used the **Spyder application** of the Anaconda Navigator in creating the program.
 ***
 3. Open the **Anaconda prompt** (when using Windows/MacOS)to run the program.
 ***
-4. When running the program in the Anaconda prompt, you need to locate the directory where the Machine_Problem-1 folder is located by typing **cd //folder path//** in the Command-Line Interface (CLI). 
-**Example: cd /Users/Madee/Desktop/Machine_Problem1**
+4. When running the program in the Anaconda prompt, you need to locate the directory where the EE298M-MachineProblem1 repository is located by typing **cd //folder path//** in the Command-Line Interface (CLI). 
+**Example: cd /Users/Madee/Desktop/EE298M-MachineProblem1**
 ***
 5. After locating the file, you need to type this in the CLI: **python //filename// //imagenumber//**. Note that image numbers depend on the images in the dataset arranged in alphabetical order (ex: Test1 - 0, Test2 - 1, etc.)
 **Example: python projective_distortion_MSP.py 0**
@@ -70,11 +70,11 @@ The mapping of bounds is shown below:
 
 This is how the figure window looks like **after selecting the corners of the image**:
 
-<Insert Sample Output-1>
+![alt text](Images-Used-MP1-ReadME/Sample_Output-1.png)
 
 This is how the figure window looks like **after waiting for about 15-30 seconds**
 
-<Insert Sample Output-2>
+![alt text](Images-Used-MP1-ReadME/Sample_Output-2.png)
 
 ## References:
 
