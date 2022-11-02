@@ -64,7 +64,8 @@ The mapping of bounds is shown below:
 **Note: The selection of the 4 points must be in order (either in CW or in CCW direction)**
 ***
 7. After the red and green boxes appear on the image, **close the figure window** and **wait for another figure window that will appear which shows the original and the corrected image.** This will take about 15-30 seconds.
-
+***
+ 
 ### Sample Output:
 
 This is how the figure window looks like **after selecting the corners of the image**:
